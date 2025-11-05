@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-image = cv2.imread('IronManMask.jpg')
+image = cv2.imread('ImageIn.jpg')
 if int(image.shape[1])>=int(image.shape[0]):
     cv2.imwrite('ImageOut.png', cv2.resize(image, (int(image.shape[0]*400/image.shape[1]), 400)))
 else:
@@ -23,4 +23,5 @@ with open("output.txt", "w") as f:
         for item in white_pixels:
             if item[1] == yIndex:
                 f.write(str(item[0])+", ")
+
         f.write(")\n")
